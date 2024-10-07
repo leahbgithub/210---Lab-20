@@ -21,7 +21,7 @@ public:
         
         legs = (rand() % 2) + 3;
         
-        for (int i = 0, i < SIZE , i++) {
+        for (int i = 0; i < SIZE; i++) {
             prices[i] = (rand() % (MAX - MIN + 1) + MIN) / 100.0;
         }
     }
@@ -41,4 +41,18 @@ public:
         prices[0] = p1; prices[1] = p2; prices[2] = p3;
     }
     
+    double getAveragePrices() {
+        double sum = 0;
+        for (int i = 0; i < SIZE; i++)
+            sum += prices[i];
+        return sum / SIZE;
+    }
+    
+    void print() {
+        cout << "CHAIR DATA (legs) --> " << legs << endl;
+        cout << "Price history --> ";
+        for (int i = 0; i < SIZE; i++)
+            cout << prices[i] << " ";
+        cout << endl << "Historical avg price: " << getAveragePrices() << endl << endl;
+    }
 };
