@@ -21,11 +21,24 @@ public:
         
         legs = (rand() % 2) + 3;
         
+        for (int i = 0, i < SIZE , i++) {
+            prices[i] = (rand() % (MAX - MIN + 1) + MIN) / 100.0;
         }
     }
     
     Chair(int l, double p[SIZE]) {
-        prices = new dou
+        prices = new double[SIZE];
+        legs = l;
+        for (int i = 0; i < SIZE; i++) {
+            prices[i] = p[i];
+        }
+    }
+    
+    void setLegs(int l) { legs = l; }
+    int getLegs() { return legs; }
+    
+    void setPrices( double p1, double p2, double p3) {
+        prices[0] = p1; prices[1] = p2; prices[2] = p3;
     }
     
 };
