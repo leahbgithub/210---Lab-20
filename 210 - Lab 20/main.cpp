@@ -55,4 +55,21 @@ public:
             cout << prices[i] << " ";
         cout << endl << "Historical avg price: " << getAveragePrices() << endl << endl;
     }
+    
+    ~Chair() {
+        delete[] prices;
+    }
 };
+
+int main() {
+    Chair *chairPtr = new Chair;
+    chairPtr->print();
+    
+    double prices[SIZE] = {525.25, 434.34, 252.52};
+    Chair *livingChair = new Chair(3, prices);
+    livingChair->print();
+    delete livingChair;
+    livingChair = nullptr;
+    
+    *Chair colle
+}
